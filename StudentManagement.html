@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
+    <title>Student Management</title>
+</head>
+<body>
+    <h1>Student Management</h1>
+        <div class="col-md-12">
+                <div class="col-md-12">
+                    <button class="btn btn-success" onclick="addNewStudent()">Add new student</button>
+                </div>
+                <div class="col-md-12 row" id="addStudent" style="display: none">
+                    <div class="col-md-6">
+                        <label for="usr"></label>ID</label>
+                        <input type="text"  placeholder="Please enter the ID" class="form-control" id="idStudent">
+                    </div>
+                    <div class="col-md-6"> <label for="pwd">Name</label>
+                        <input type="text"  placeholder="Please enten the student's name" class="form-control" id="studentName">
+                        <p id="error" style="color: red;"></p>
+                    </div>
+                    <div class="col-md-6"> <label for="pwd">JS Score</label>
+                        <input type="text"  placeholder="Please enten the student's score" class="form-control" id="jsScore">
+                        <div id="error1" style="color: red;"></div>
+                    </div> 
+                    <div class="col-md-6"> <label for="pwd">Android Score</label>
+                        <input type="text"  placeholder="Please enten the student's score" class="form-control" id="androidScore">
+                        <div id="error2" style="color: red;"></div>
+                    </div>  
+                    <div class="col-md-6" ><label for="pwd" style="margin-top: 16px;">Class Name</label>
+                        <input type="text"  placeholder="Please enten the student's class" class="form-control" id="className">
+                    </div> 
+                    <div class="col-md-6">
+                        <button style="margin-top: 14px;" class="btn btn-success" onclick="addStudentClick()" style="display: block">Save</button>
+                    </div> 
+                </div>
+                <div class="col-md-12 " id="showInforStudents">
+                    <h1>List of students</h1>
+                    <div class="search-container">
+                        <input type="text" placeholder="Search.." name="search" id="search" onkeypress="search()">
+                        <button type="submit" onclick="search()"><i class="fa fa-search"></i></button>
+                    </div></br></br>
+                    <div><button class="btn btn-danger" onclick="sortStudentByName()">Sort By Name</button>
+                        <button class="btn btn-warning" onclick="sortStudentByScore()">Sort By Score</button>
+                    </div></br></br>
+                    <div class=" border border-dark rounded">
+                        <table class="table table-hover " >
+                            <thead>
+                                <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Class Name</th>
+                                <th scope="col">JS Score</th>
+                                <th scope="col">Android Score</th>
+                                <th scope="col">Average Score</th>
+                                <th scope="col">Ranking</th>
+                                <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="studentList"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    
+</body>
+<script type="text/javascript" src="index.js" >
+
+</script>
+
+</html>
+
